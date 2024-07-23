@@ -1,15 +1,15 @@
 FROM node:14-slim
 
 # Step 4.1 - Add container working directory
-WORKDIR /serverd
+WORKDIR /app
 
 # Step 4.2 - Copy npm dependencies
-COPY package.json /serverd/package.json
+COPY package.json .
 # Step 4.3 - Install dependencies
 RUN npm install
 # Copy app source code
 
-COPY /src serverd/src
+COPY . .
 
 #Expose port and start application
 
